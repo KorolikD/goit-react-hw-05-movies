@@ -10,8 +10,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GlobalStyles />
     <ThemeProvider theme={theme}>
-      {/* <BrowserRouter basename="/goit-react-hw-05-movies"> */}
-      <BrowserRouter>
+      <BrowserRouter basename="/goit-react-hw-05-movies">
+        {/* <BrowserRouter> */}
         <App />
       </BrowserRouter>
     </ThemeProvider>
