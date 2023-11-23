@@ -1,48 +1,20 @@
+import { Layout } from 'components/Layout/Layout';
+import Home from 'pages/Home';
+import MovieDetails from 'pages/MovieDetails';
+import Movies from 'pages/Movies';
 import React from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
-import { Home } from 'pages';
-import {
-  getMovieCredits,
-  getMovieDetails,
-  getTrendingMovie,
-} from 'helpers/api';
+import { Route, Routes } from 'react-router-dom';
 
 export const App = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <NavLink />
-          </li>
-          <li>
-            <NavLink />
-          </li>
-        </ul>
-      </nav>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <h1>Home</h1>
-            </div>
-          }
-        />
-        <Route path="/movies" element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
+          <Route path="movies/:movieId" element={<MovieDetails />} />
+        </Route>
       </Routes>
     </>
   );
 };
-
-const trendingMovies = async () => {
-  try {
-    const response = await getMovieCredits(555);
-
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-trendingMovies();
