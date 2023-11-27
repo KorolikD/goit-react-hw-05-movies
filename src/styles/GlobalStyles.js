@@ -60,4 +60,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+  h2 {
+    margin-bottom: 20px;
+  }
 `;

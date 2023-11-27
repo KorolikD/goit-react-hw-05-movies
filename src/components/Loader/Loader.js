@@ -1,7 +1,7 @@
-import { RotatingLines } from 'react-loader-spinner';
+import { RotatingLines, ThreeDots } from 'react-loader-spinner';
 import { theme } from 'styles';
 
-export const Loader = () => (
+export const MaimLoader = () => (
   <div
     style={{
       height: '85vh',
@@ -14,7 +14,29 @@ export const Loader = () => (
       strokeColor={theme.colors.gray}
       strokeWidth="5"
       animationDuration="0.75"
-      width="60"
+      width="40"
+      visible={true}
+    />
+  </div>
+);
+
+export const Loader = () => (
+  <div
+    style={{
+      display: 'flex',
+      paddingLeft: '60px',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+    }}
+  >
+    <ThreeDots
+      height="40"
+      width="40"
+      radius="2"
+      color={theme.colors.gray}
+      ariaLabel="three-dots-loading"
+      wrapperStyle={{}}
+      wrapperClassName=""
       visible={true}
     />
   </div>

@@ -1,3 +1,4 @@
+import { Loader } from 'components/Loader/Loader';
 import { getMovieDetailsById } from 'helpers/api';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
@@ -31,7 +32,7 @@ const MovieDetails = () => {
     <div>
       <Link to={backLinkHref.current}>Go back</Link>
 
-      {isLoading && <p>Завантаження...</p>}
+      {isLoading && <Loader />}
 
       {movie.id ? (
         <>

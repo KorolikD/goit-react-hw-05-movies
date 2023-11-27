@@ -1,3 +1,4 @@
+import { Loader } from 'components/Loader/Loader';
 import { getMovieReviews } from 'helpers/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -25,7 +26,7 @@ export const Reviews = () => {
 
   return (
     <div>
-      {isLoading && <p>Завантаження...</p>}
+      {isLoading && <Loader />}
       {review.length > 0 ? (
         <ul>
           {review.map(({ id, author, content }) => {
