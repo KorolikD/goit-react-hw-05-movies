@@ -8,7 +8,7 @@ export const Reviews = () => {
   const { movieId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
 
-  const [review, setReview] = useState({});
+  const [review, setReview] = useState([]);
 
   useEffect(() => {
     const getCast = async () => {
@@ -26,7 +26,7 @@ export const Reviews = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <>
       {isLoading && <Loader />}
       {review.length > 0 ? (
         <ul>
@@ -42,6 +42,6 @@ export const Reviews = () => {
       ) : (
         <p>We don't hawe any reviews for this movie.</p>
       )}
-    </div>
+    </>
   );
 };
