@@ -1,9 +1,7 @@
-import { Loader } from 'components/Loader/Loader';
-import { MoviesList } from 'components/MoviesList/MoviesList';
-import { Searchbar } from 'components/Searchbar/Searchbar';
 import { searchMoviesByQuery } from 'utils/api';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Loader, MoviesList, Searchbar } from 'components';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);

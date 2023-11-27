@@ -1,19 +1,19 @@
 import { RiArrowRightSLine } from 'react-icons/ri';
-import { Container, LinkWraper, NavLink } from './AdditionalInformation.styled';
+import { Container, NavLink } from './AdditionalInformation.styled';
 
 export const AdditionalInformation = () => {
   return (
     <>
       <h3>Additional Information</h3>
       <Container>
-        <LinkWraper>
+        <NavLink to={'cast'}>
           <RiArrowRightSLine />
-          <NavLink to={'cast'}>Cast</NavLink>
-        </LinkWraper>
-        <LinkWraper>
+          Cast
+        </NavLink>
+        <NavLink to={'reviews'}>
           <RiArrowRightSLine />
-          <NavLink to={'reviews'}>Reviews</NavLink>
-        </LinkWraper>
+          Reviews
+        </NavLink>
       </Container>
     </>
   );

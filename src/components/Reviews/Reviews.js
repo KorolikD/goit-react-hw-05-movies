@@ -1,8 +1,8 @@
-import { Loader } from 'components/Loader/Loader';
-import { getMovieReviews } from 'utils/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AutrorName, Review } from './Reviews.styled';
+import { getMovieReviews } from 'utils/api';
+import { Loader } from 'components';
 
 export const Reviews = () => {
   const { movieId } = useParams();

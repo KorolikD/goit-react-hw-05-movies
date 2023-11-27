@@ -6,7 +6,7 @@ import {
   Header,
   Container,
 } from './SharedLayout.styled';
-import { MaimLoader } from 'components/Loader/Loader';
+import { MaimLoader } from 'components';
 
 export const SharedLayout = () => {
   return (

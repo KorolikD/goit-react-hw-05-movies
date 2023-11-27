@@ -1,10 +1,12 @@
-import { Loader } from 'components/Loader/Loader';
-import { getMovieDetailsById } from 'utils/api';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
-import { GoBackBtn } from 'components/GoBackBtn/GoBackBtn';
-import { MovieCard } from 'components/MovieCard/MovieCard';
-import { AdditionalInformation } from 'components/AdditionalInformation/AdditionalInformation';
+import { getMovieDetailsById } from 'utils/api';
+import {
+  AdditionalInformation,
+  GoBackBtn,
+  Loader,
+  MovieCard,
+} from 'components';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);

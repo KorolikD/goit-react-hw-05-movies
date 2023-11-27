@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const LinkWraper = styled.div`
+export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   margin-bottom: 2px;
@@ -17,9 +17,6 @@ export const LinkWraper = styled.div`
   &:hover {
     color: ${theme.colors.accent};
   }
-`;
-
-export const NavLink = styled(Link)`
   &.active {
     color: ${theme.colors.accent};
   }

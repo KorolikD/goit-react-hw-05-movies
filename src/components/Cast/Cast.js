@@ -1,9 +1,9 @@
 import { getMovieCredits } from 'utils/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Loader } from 'components/Loader/Loader';
 import { ActorName, CastList, Character, ProfileImg } from './Cast.styled';
 import { imgLincByGender } from 'utils/imgLincByGender';
+import { Loader } from 'components';
 
 export const Cast = () => {
   const { movieId } = useParams();
