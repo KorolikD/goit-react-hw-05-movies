@@ -1,7 +1,7 @@
 import { Loader } from 'components/Loader/Loader';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { Searchbar } from 'components/Searchbar/Searchbar';
-import { searchMoviesByQuery } from 'helpers/api';
+import { searchMoviesByQuery } from 'utils/api';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -37,25 +37,14 @@ const Movies = () => {
     setSearchParams(nextParams);
   };
 
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   const { value: query } = event.target.elements.search;
-
-  //   updateSearchParams(query);
-  //   event.target.reset();
-  // };
-
   return (
-    <div>
-      {/* <form onSubmit={handleSubmit}>
-        <input type="text" name="search" autoComplete="off" />
-        <button type="submit">Search</button>
-      </form> */}
+    <>
       <Searchbar onSubmit={updateSearchParams} />
 
       {isLoading && <Loader />}
-      {movies.length > 0 ? <MoviesList data={movies} /> : null}
-    </div>
+
+      {movies.length > 0 && <MoviesList data={movies} />}
+    </>
   );
 };
 

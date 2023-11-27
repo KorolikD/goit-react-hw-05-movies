@@ -6,6 +6,7 @@ export const Poster = styled.img`
 `;
 
 export const PreTitle = styled.p`
+  margin-bottom: 12px;
   font-weight: 500;
 `;
 

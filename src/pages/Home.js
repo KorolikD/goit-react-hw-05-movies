@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getTrendingMovies } from 'helpers/api';
+import { getTrendingMovies } from 'utils/api';
 import { Loader } from 'components/Loader/Loader';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
@@ -23,16 +23,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      {isLoading && <Loader />}
+    <>
+      <h2>Trending today</h2>
 
-      {trendingMovies.length > 0 ? (
-        <>
-          <h2>Trending today</h2>
-          <MoviesList data={trendingMovies} />
-        </>
-      ) : null}
-    </div>
+      {isLoading && <Loader />}
+      {trendingMovies.length > 0 && <MoviesList data={trendingMovies} />}
+    </>
   );
 };
 

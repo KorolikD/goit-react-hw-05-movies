@@ -1,5 +1,5 @@
 import { Loader } from 'components/Loader/Loader';
-import { getMovieDetailsById } from 'helpers/api';
+import { getMovieDetailsById } from 'utils/api';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 import { GoBackBtn } from 'components/GoBackBtn/GoBackBtn';
@@ -7,7 +7,7 @@ import { MovieCard } from 'components/MovieCard/MovieCard';
 import { AdditionalInformation } from 'components/AdditionalInformation/AdditionalInformation';
 
 const MovieDetails = () => {
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const { movieId } = useParams();
 
@@ -27,12 +27,12 @@ const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <>
       <GoBackBtn />
 
       {isLoading && <Loader />}
 
-      {movie.id ? (
+      {movie && (
         <>
           <MovieCard data={movie} />
           <hr style={{ marginTop: '0' }} />
@@ -40,8 +40,8 @@ const MovieDetails = () => {
           <hr style={{ marginBottom: '12px' }} />
           <Outlet />
         </>
-      ) : null}
-    </div>
+      )}
+    </>
   );
 };
 

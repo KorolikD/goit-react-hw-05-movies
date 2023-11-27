@@ -1,5 +1,5 @@
 import { Loader } from 'components/Loader/Loader';
-import { getMovieReviews } from 'helpers/api';
+import { getMovieReviews } from 'utils/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AutrorName, Review } from './Reviews.styled';
@@ -28,7 +28,12 @@ export const Reviews = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {review.length > 0 ? (
+      {isLoading ||
+        (review.length === 0 && (
+          <p>We don't hawe any reviews for this movie.</p>
+        ))}
+
+      {review.length > 0 && (
         <ul>
           {review.map(({ id, author, content }) => {
             return (
@@ -39,8 +44,6 @@ export const Reviews = () => {
             );
           })}
         </ul>
-      ) : (
-        <p>We don't hawe any reviews for this movie.</p>
       )}
     </>
   );
