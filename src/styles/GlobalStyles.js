@@ -63,4 +63,8 @@ export const GlobalStyles = createGlobalStyle`
   h2 {
     margin-bottom: 20px;
   }
+
+    h3 {
+    margin-bottom: 12px;
+  }
 `;

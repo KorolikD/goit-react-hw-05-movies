@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import male from '../../img/male.jpg';
 import female from '../../img/female.jpg';
 import { Loader } from 'components/Loader/Loader';
+import { ActorName, CastList, Character, ProfileImg } from './Cast.styled';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -26,20 +27,11 @@ export const Cast = () => {
     getCast();
   }, [movieId]);
 
-  console.log(cast);
-
   return (
     <div>
       {isLoading && <Loader />}
       {cast.length > 0 ? (
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '16px',
-          }}
-        >
+        <CastList>
           {cast.map(({ cast_id, profile_path, name, character, gender }) => {
             const imgLincByGender = gender => {
               if (gender === 1) {
@@ -57,13 +49,13 @@ export const Cast = () => {
 
             return (
               <li key={cast_id} style={{ width: '200px' }}>
-                <img src={imgLink} alt={name} width={200} />
-                <p>{name}</p>
-                <p>Character: {character}</p>
+                <ProfileImg src={imgLink} alt={name} width={200} />
+                <ActorName>{name}</ActorName>
+                <Character>{`Character: ${character}`}</Character>
               </li>
             );
           })}
-        </ul>
+        </CastList>
       ) : null}
     </div>
   );

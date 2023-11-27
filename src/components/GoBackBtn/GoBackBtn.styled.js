@@ -1,12 +1,12 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from 'styles';
 
-export const MovieListItem = styled.li`
+export const LinkOnBtn = styled(Link)`
   display: flex;
   align-items: center;
-  margin-bottom: 2px;
+  margin-bottom: 12px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
 
   &:hover,
   :focus {
