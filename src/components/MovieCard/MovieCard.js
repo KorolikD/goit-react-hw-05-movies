@@ -1,10 +1,10 @@
-import { Poster, PreTitle, Wraper } from './MovieCard.styled';
+import { Poster, PreTitle, Wrapper } from './MovieCard.styled';
 import imgByDef from '../../img/img-by-def.jpg';
 
 export const MovieCard = ({ data }) => {
   const { original_title, poster_path, vote_average, overview, genres } = data;
   return (
-    <Wraper>
+    <Wrapper>
       <Poster
         src={
           poster_path !== null
@@ -22,6 +22,6 @@ export const MovieCard = ({ data }) => {
         <PreTitle>Genres:</PreTitle>
         <p>{genres.map(el => el.name).join(', ')}</p>
       </div>
-    </Wraper>
+    </Wrapper>
   );
 };

@@ -10,6 +10,6 @@ export const PreTitle = styled.p`
   font-weight: 500;
 `;
 
-export const Wraper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
 `;
